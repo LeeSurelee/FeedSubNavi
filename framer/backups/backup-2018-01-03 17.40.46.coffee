@@ -7,6 +7,10 @@ subContainer = []
 subLayers = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9, sub10, sub11, sub12, sub13]
 originalLayers =[enter, enter2, enter3, enter4]
 comments = ["北航故事", "北京小风子", "潘玮柏", "周冬雨","来去之间","用户昵称"]
+enters = [enter, enter2, enter3, enter4, enter5]
+
+for layer in enters
+	layer.width = Screen.width
 Framer.Defaults.Animation =
 	time: .3
 	curve: Bezier.easeInOut
@@ -61,6 +65,7 @@ homePageContent = ->
 # 	homePageItem[homeItemNumber-2].opacity = 0
 homePageContent()
 
+storiesState = 1
 refresh = ->
 	destroyhomePage()
 	homePageContent()
@@ -70,6 +75,7 @@ refresh = ->
 		options: 
 			time: 0.01
 	stories.opacity = 0
+	storiesState = 0
 
 Original = ->
 	homePageContent()
@@ -77,6 +83,7 @@ Original = ->
 		scrollY: 0
 		y: 0
 	stories.opacity = 1
+	storiesState = 1
 	subNavi.animate
 		y: 21
 
@@ -156,15 +163,12 @@ for layer,i in subContainer
 			layer.color = '#333333'
 			TextLayerContainer[indexNumber-1].color = '#FF8200'
 		refresh()
+		overdrag()
 		if indexNumber == 1
 			Original()
 
 # 		subScroll.speedX = 0
 
-
-		
-
-					
 subMore.draggable.propagateEvents = false
 subMore.onClick ->
 	flow.showOverlayTop($2)
@@ -231,7 +235,6 @@ for layer,i in TextLayerContainer
 				Utils.delay 0.3, ->
 					refresh()
 					overdrag()
-
 # subNavi.opacity = 0
 # scroll.onMove (event,layer) ->
 # 	subNavi.opacity = Utils.modulate(event.y, [-103,-104], [0,1], true)
@@ -249,33 +252,43 @@ scroll.on Events.Scroll, (event) ->
 	LastPosition = scroll.scrollY
 # 	print yDelta
 # 	print event.y
+# 	print LastPosition
 	if scroll.scrollY > 120
-		if yDelta > 3
-			subState = true
-			subNavi.animate
-				y: 21
-			Uper.animate
-				shadowColor: "#dadada"
-		if yDelta < -3
-			subState = false
+		if storiesState == 1
+			if yDelta > 3
+				subState = true
+				subNavi.animate
+					y: 21
+				Uper.animate
+					shadowColor: "#dadada"
+			if yDelta < -3
+				subState = false
+				subNavi.animate
+					y: 62
+				Uper.animate
+					shadowColor: "#e6e6e6"
+		else
+			if scroll.scrollY > 180
+				if yDelta > 3
+					subState = true
+					subNavi.animate
+						y: 21
+					Uper.animate
+						shadowColor: "#dadada"
+				if yDelta < -3
+					subState = false
+					subNavi.animate
+						y: 62
+					Uper.animate
+						shadowColor: "#e6e6e6"
+	if scroll.scrollY <= 120
+		if storiesState == 1
+			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21,62], true)
+			subNavi.opacity = Utils.modulate(-scroll.scrollY, [-12,-20], [0,1], true)
+		else
 			subNavi.animate
 				y: 62
-			Uper.animate
-				shadowColor: "#e6e6e6"
-# 		else
-# 			if subNavi.y == 21
-# 				subNavi.y = 21
-# 			if subNavi.y == 62
-# 				subNavi.y = 62
-# 		if subState
-# 			subNavi.animate
-# 				y: 21
-# 		else
-# 			subNavi.animate
-# 				y: 62
-	if scroll.scrollY <= 120
-		subNavi.opacity = Utils.modulate(-scroll.scrollY, [-12,-20], [0,1], true)
-		subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21,62], true)
+			subNavi.opacity = 1
 	
 # scroll.onMove (event,layer) ->
 # 	print event.y
@@ -284,16 +297,14 @@ overdragDistance = 0
 overdrag = ->
 	scroll.onMove (event,layer) ->
 		overdragDistance = event.y
-		print event.y
+# 		print event.y
 		if overdragDistance > -103
 			scroll.speedY = Utils.modulate(event.y, [-104,103], [1,0], true)
 			scroll.onScrollEnd ->
 				if overdragDistance > -103
 					scroll.animate
 						scrollY: 103
-				else
-					print 1
-			subNavi.y = 63
+# 			subNavi.y = 63
 		else
 			scroll.speedY = 1#Utils.modulate(event.y, [-104,-103], [1,1], true)
 
