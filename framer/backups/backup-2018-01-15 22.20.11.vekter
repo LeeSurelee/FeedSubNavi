@@ -2074,7 +2074,7 @@
                 "inset" : false,
                 "spread" : 0,
                 "x" : 0,
-                "y" : 0.5
+                "y" : 1
               }
             ],
             "brightness" : 100,

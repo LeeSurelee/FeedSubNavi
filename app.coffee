@@ -9,6 +9,7 @@ originalLayers =[enter, enter2, enter3, enter4, enter5]
 comments = ["北航故事", "北京小风子", "潘玮柏", "周冬雨","来去之间","用户昵称"]
 
 
+
 for layer in originalLayers
 	ratio = Screen.width/375
 	layer.width = Screen.width
@@ -137,7 +138,7 @@ subContent = ->
 		sub = i
 		layer = subLayers[i]
 		layer.parent = subScroll.content
-		layer.y = 14
+		layer.y = 12
 		if i < 1
 			layer.x = 14
 		else
@@ -270,12 +271,14 @@ scroll.on Events.Scroll, (event) ->
 					y: 21
 				Uper.animate
 					shadowColor: "#dadada"
+
 			if yDelta < -3
 				subState = false
 				subNavi.animate
-					y: 62
+					y: 64
 				Uper.animate
 					shadowColor: "#e6e6e6"
+
 		else
 			if scroll.scrollY > 180
 				if yDelta > 3
@@ -287,16 +290,16 @@ scroll.on Events.Scroll, (event) ->
 				if yDelta < -3
 					subState = false
 					subNavi.animate
-						y: 62
+						y: 64
 					Uper.animate
 						shadowColor: "#e6e6e6"
 	if scroll.scrollY <= 120
 		if storiesState == 1
-			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21,62], true)
+			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21,64], true)
 			subNavi.opacity = Utils.modulate(-scroll.scrollY, [-12,-20], [0,1], true)
 		else
 			subNavi.animate
-				y: 62
+				y: 64
 			subNavi.opacity = 1
 	
 # scroll.onMove (event,layer) ->
