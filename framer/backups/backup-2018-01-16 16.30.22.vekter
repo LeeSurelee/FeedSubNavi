@@ -2099,7 +2099,7 @@
                 "borderStyle" : "solid",
                 "borderTop" : 1,
                 "borderWidth" : 1,
-                "bottom" : 2,
+                "bottom" : null,
                 "boxShadows" : [
 
                 ],
@@ -2151,7 +2151,7 @@
                 "sepia" : 0,
                 "sepiaEnabled" : 0,
                 "targetName" : "UperImage",
-                "top" : null,
+                "top" : 5,
                 "visible" : true,
                 "width" : 363,
                 "widthFactor" : null

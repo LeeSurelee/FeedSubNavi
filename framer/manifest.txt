@@ -38,8 +38,8 @@ framer/coffee-script.js
 framer/framer.init.js
 framer/framer.js
 .git/config
-.git/objects/pack/pack-cae1e084fe3022f841f0b64f2306e22e14051c2d.idx
-.git/objects/pack/pack-cae1e084fe3022f841f0b64f2306e22e14051c2d.pack
+.git/objects/pack/pack-8fb73e0f4c6b654f22eee12fed903bb0f99c1bad.idx
+.git/objects/pack/pack-8fb73e0f4c6b654f22eee12fed903bb0f99c1bad.pack
 .git/HEAD
 .git/info/exclude
 .git/logs/HEAD

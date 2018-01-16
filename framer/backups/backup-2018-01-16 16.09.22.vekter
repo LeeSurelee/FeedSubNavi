@@ -2080,7 +2080,7 @@
             "brightness" : 100,
             "brightnessEnabled" : 0,
             "centerAnchorX" : 0.5,
-            "centerAnchorY" : 0.047976011994002997,
+            "centerAnchorY" : 0.047226386806596701,
             "children" : [
               {
                 "__class" : "ImageNode",
@@ -2111,7 +2111,7 @@
 
                 ],
                 "clip" : true,
-                "constraintsLocked" : true,
+                "constraintsLocked" : false,
                 "contrast" : 100,
                 "contrastEnabled" : 0,
                 "exportOptions" : [
@@ -2134,7 +2134,7 @@
                 "invertEnabled" : 0,
                 "left" : 7,
                 "locked" : false,
-                "name" : "UperImage",
+                "name" : null,
                 "opacity" : 1,
                 "originalFilename" : " White.png",
                 "parentid" : "tuGoGgDV9",
@@ -2150,7 +2150,7 @@
                 "saturateEnabled" : 0,
                 "sepia" : 0,
                 "sepiaEnabled" : 0,
-                "targetName" : "UperImage",
+                "targetName" : null,
                 "top" : null,
                 "visible" : true,
                 "width" : 363,
@@ -2158,7 +2158,7 @@
               }
             ],
             "clip" : false,
-            "constraintsLocked" : true,
+            "constraintsLocked" : false,
             "contrast" : 100,
             "contrastEnabled" : 0,
             "deviceType" : null,
