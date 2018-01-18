@@ -1,3 +1,5 @@
+
+# pre settings
 storyItemNumber = 8
 subItemNumber = 5
 layerGap = 10
@@ -9,7 +11,21 @@ originalLayers =[enter, enter2, enter3, enter4, enter5]
 comments = ["北航故事", "北京小风子", "潘玮柏", "周冬雨","来去之间","用户昵称"]
 
 
+# device logic
+TopNaviForX.opacity = 0
+BottomNaviForX.opacity = 0
+SpaceForiPhoneX = 0
+if Screen.height == 812
+	TopNaviForX.opacity = 1
+	BottomNaviForX.opacity = 1
+	SpaceForiPhoneX = 14
+stories.y += SpaceForiPhoneX
+subNavi.y += SpaceForiPhoneX
+	
 
+
+
+# UperImage.height = 57
 for layer in originalLayers
 	ratio = Screen.width/375
 	layer.width = Screen.width
@@ -32,6 +48,7 @@ scroll = new ScrollComponent
 	height: Screen.height
 	backgroundColor: null
 	parent: $1
+
 	contentInset: 
 		bottom: 100
 		
@@ -90,7 +107,7 @@ Original = ->
 	stories.opacity = 1
 	storiesState = 1
 	subNavi.animate
-		y: 21
+		y: 21+ SpaceForiPhoneX
 
 storyContainer = []
 stories.parent = scroll.content
@@ -205,6 +222,7 @@ for i in [0...12]
 		layer.x = 88 * i * ratio + 15 - 88 * 8 * ratio
 		layer.y = 173
 	TextLayer = subLayers[i].copy()
+	TextLayer.fontSize = 14
 	TextLayerContainer.push(TextLayer)
 	TextLayer.parent = layer
 	TextLayer.x = Align.center
@@ -242,10 +260,6 @@ for layer,i in TextLayerContainer
 				Utils.delay 0.3, ->
 					refresh()
 					overdrag()
-# subNavi.opacity = 0
-# scroll.onMove (event,layer) ->
-# 	subNavi.opacity = Utils.modulate(event.y, [-103,-104], [0,1], true)
-# 	subNavi.y = Utils.modulate(event.y, [-103,-113], [21,62], true)
 	
 LastPosition = 0
 yDelta = 0
@@ -265,14 +279,14 @@ scroll.on Events.Scroll, (event) ->
 			if yDelta > 3
 				subState = true
 				subNavi.animate
-					y: 21
+					y: 21 + SpaceForiPhoneX
 				Uper.animate
 					shadowColor: "#dadada"
 
 			if yDelta < -3
 				subState = false
 				subNavi.animate
-					y: 64
+					y: 64+ SpaceForiPhoneX
 				Uper.animate
 					shadowColor: "#e6e6e6"
 
@@ -281,22 +295,22 @@ scroll.on Events.Scroll, (event) ->
 				if yDelta > 3
 					subState = true
 					subNavi.animate
-						y: 21
-					Uper.animate
-						shadowColor: "#dadada"
+						y: 21+ SpaceForiPhoneX
+# 					Uper.animate
+# 						shadowColor: "#dadada"
 				if yDelta < -3
 					subState = false
 					subNavi.animate
-						y: 64
-					Uper.animate
-						shadowColor: "#e6e6e6"
+						y: 64+ SpaceForiPhoneX
+# 					Uper.animate
+# 						shadowColor: "#e6e6e6"
 	if scroll.scrollY <= 120
 		if storiesState == 1
-			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21,64], true)
+			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21+ SpaceForiPhoneX,64+ SpaceForiPhoneX], true)
 			subNavi.opacity = Utils.modulate(-scroll.scrollY, [-12,-20], [0,1], true)
 		else
 			subNavi.animate
-				y: 64
+				y: 64+ SpaceForiPhoneX
 			subNavi.opacity = 1
 	
 # scroll.onMove (event,layer) ->

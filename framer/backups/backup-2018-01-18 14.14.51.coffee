@@ -1,3 +1,5 @@
+
+# pre settings
 storyItemNumber = 8
 subItemNumber = 5
 layerGap = 10
@@ -9,14 +11,26 @@ originalLayers =[enter, enter2, enter3, enter4, enter5]
 comments = ["北航故事", "北京小风子", "潘玮柏", "周冬雨","来去之间","用户昵称"]
 
 
+# device logic
+TopNaviForX.opacity = 0
+BottomNaviForX.opacity = 0
+SpaceForiPhoneX = 0
+if Screen.height == 812
+	TopNaviForX.opacity = 1
+	BottomNaviForX.opacity = 1
+	SpaceForiPhoneX = 15
+stories.y += SpaceForiPhoneX
+subnav
+	
+
+
+
+# UperImage.height = 57
 for layer in originalLayers
 	ratio = Screen.width/375
 	layer.width = Screen.width
 	layer.height = ratio * 449
 	
-# print originalLayers[1].height
-# print Screen.width/375 * 449
-#495.7
 	
 Framer.Defaults.Animation =
 	time: .3
@@ -137,7 +151,7 @@ subContent = ->
 		sub = i
 		layer = subLayers[i]
 		layer.parent = subScroll.content
-		layer.y = 14
+		layer.y = 12
 		if i < 1
 			layer.x = 14
 		else
@@ -207,6 +221,7 @@ for i in [0...12]
 		layer.x = 88 * i * ratio + 15 - 88 * 8 * ratio
 		layer.y = 173
 	TextLayer = subLayers[i].copy()
+	TextLayer.fontSize = 14
 	TextLayerContainer.push(TextLayer)
 	TextLayer.parent = layer
 	TextLayer.x = Align.center
@@ -270,28 +285,28 @@ scroll.on Events.Scroll, (event) ->
 					y: 21
 				Uper.animate
 					shadowColor: "#dadada"
-				print Uper.shadowColor
+
 			if yDelta < -3
 				subState = false
 				subNavi.animate
 					y: 64
 				Uper.animate
 					shadowColor: "#e6e6e6"
-				print Uper.shadowColor
+
 		else
 			if scroll.scrollY > 180
 				if yDelta > 3
 					subState = true
 					subNavi.animate
 						y: 21
-					Uper.animate
-						shadowColor: "#dadada"
+# 					Uper.animate
+# 						shadowColor: "#dadada"
 				if yDelta < -3
 					subState = false
 					subNavi.animate
 						y: 64
-					Uper.animate
-						shadowColor: "#e6e6e6"
+# 					Uper.animate
+# 						shadowColor: "#e6e6e6"
 	if scroll.scrollY <= 120
 		if storiesState == 1
 			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21,64], true)

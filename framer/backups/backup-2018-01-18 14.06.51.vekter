@@ -1073,7 +1073,7 @@
               {
                 "__class" : "BoxShadow",
                 "blur" : 0,
-                "color" : "#e6e6e6",
+                "color" : "hsla(0, 0%, 0%, 0.15)",
                 "enabled" : true,
                 "inset" : false,
                 "spread" : 0,
@@ -2069,7 +2069,7 @@
               {
                 "__class" : "BoxShadow",
                 "blur" : 0,
-                "color" : "#dadada",
+                "color" : "hsla(0, 0%, 0%, 0.15)",
                 "enabled" : true,
                 "inset" : false,
                 "spread" : 0,
@@ -2080,7 +2080,7 @@
             "brightness" : 100,
             "brightnessEnabled" : 0,
             "centerAnchorX" : 0.5,
-            "centerAnchorY" : 0.047226386806596701,
+            "centerAnchorY" : 0.047976011994002997,
             "children" : [
               {
                 "__class" : "ImageNode",
@@ -2111,7 +2111,7 @@
 
                 ],
                 "clip" : true,
-                "constraintsLocked" : false,
+                "constraintsLocked" : true,
                 "contrast" : 100,
                 "contrastEnabled" : 0,
                 "exportOptions" : [
@@ -2134,7 +2134,7 @@
                 "invertEnabled" : 0,
                 "left" : 7,
                 "locked" : false,
-                "name" : null,
+                "name" : "UperImage",
                 "opacity" : 1,
                 "originalFilename" : " White.png",
                 "parentid" : "tuGoGgDV9",
@@ -2150,7 +2150,7 @@
                 "saturateEnabled" : 0,
                 "sepia" : 0,
                 "sepiaEnabled" : 0,
-                "targetName" : null,
+                "targetName" : "UperImage",
                 "top" : null,
                 "visible" : true,
                 "width" : 363,
@@ -2158,7 +2158,7 @@
               }
             ],
             "clip" : false,
-            "constraintsLocked" : false,
+            "constraintsLocked" : true,
             "contrast" : 100,
             "contrastEnabled" : 0,
             "deviceType" : null,

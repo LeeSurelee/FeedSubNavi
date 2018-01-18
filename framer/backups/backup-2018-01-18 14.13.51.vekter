@@ -916,7 +916,7 @@
             "brightness" : 100,
             "brightnessEnabled" : 0,
             "centerAnchorX" : 0.5,
-            "centerAnchorY" : 0.17316341829085458,
+            "centerAnchorY" : 0.17166416791604197,
             "children" : [
               {
                 "__class" : "FrameNode",
@@ -1046,7 +1046,7 @@
             "sepia" : 0,
             "sepiaEnabled" : 0,
             "targetName" : "stories",
-            "top" : 64,
+            "top" : 63,
             "visible" : true,
             "width" : 375,
             "widthFactor" : null
@@ -2304,19 +2304,19 @@
             "boxShadows" : [
               {
                 "__class" : "BoxShadow",
-                "blur" : 0,
-                "color" : "hsla(0, 0%, 0%, 0.15)",
+                "blur" : 5,
+                "color" : "rgba(0,0,0,0.25)",
                 "enabled" : true,
                 "inset" : false,
                 "spread" : 0,
                 "x" : 0,
-                "y" : 0.5
+                "y" : 2
               }
             ],
             "brightness" : 100,
             "brightnessEnabled" : 0,
             "centerAnchorX" : 0.5,
-            "centerAnchorY" : 0.065967016491754127,
+            "centerAnchorY" : 0.059220389805097452,
             "children" : [
 
             ],
@@ -2331,14 +2331,14 @@
             "fillEnabled" : false,
             "grayscale" : 0,
             "grayScaleEnabled" : 0,
-            "height" : 88,
+            "height" : 79,
             "heightFactor" : null,
             "hueRotate" : 0,
             "hueRotateEnabled" : 0,
-            "id" : "eusrZiNI_",
-            "image" : "4l2l93JqdGkF5Yjm4JUqfWQhSqwozWn15A2UAdXaZf8yjfiJH09Jp9nWsoOoZM0e6icd5JNMFDD23mx0sjXw.png",
+            "id" : "fqDZgPT3Y",
+            "image" : "JvVuKhsMbu2H8iJ3Hvou9j6KZwbGy3YDIbSMvTjMn0jS5gLiIZyIKDztMmzAo9CljB230zOFGkCOKDPVwjbYsw.png",
             "imageBackgroundSize" : "Cover",
-            "intrinsicHeight" : 176,
+            "intrinsicHeight" : 177,
             "intrinsicWidth" : 750,
             "invert" : 0,
             "invertEnabled" : 0,
