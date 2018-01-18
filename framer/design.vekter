@@ -2520,7 +2520,7 @@
             "sepiaEnabled" : 0,
             "targetName" : "BottomNaviForX",
             "top" : null,
-            "visible" : false,
+            "visible" : true,
             "width" : 375,
             "widthFactor" : null
           },
