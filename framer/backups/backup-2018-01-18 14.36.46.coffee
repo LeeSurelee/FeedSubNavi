@@ -1,3 +1,5 @@
+
+# pre settings
 storyItemNumber = 8
 subItemNumber = 5
 layerGap = 10
@@ -9,7 +11,23 @@ originalLayers =[enter, enter2, enter3, enter4, enter5]
 comments = ["北航故事", "北京小风子", "潘玮柏", "周冬雨","来去之间","用户昵称"]
 
 
+# device logic
+TopNaviForX.opacity = 0
+BottomNaviForX.opacity = 0
+SpaceForiPhoneX = 0
+TimeForX.opacity = 0
+if Screen.height == 812
+	TopNaviForX.opacity = 1
+	BottomNaviForX.opacity = 1
+	SpaceForiPhoneX = 23
+	OriginalTime.opacity = 0
+	TimeForX.opacity = 1
+stories.y += SpaceForiPhoneX
+subNavi.y += SpaceForiPhoneX
+Title.y += SpaceForiPhoneX
 
+
+# UperImage.height = 57
 for layer in originalLayers
 	ratio = Screen.width/375
 	layer.width = Screen.width
@@ -60,7 +78,7 @@ homePageContent = ->
 		layer.x = Align.center
 		layer.parent = scroll.content
 		if i < 1
-			layer.y = 166
+			layer.y = 166+ SpaceForiPhoneX
 		else
 			layer.y = homePageItem[medium - 1].y + homePageItem[medium - 1].height + layerGap
 # 		layer.onClick ->
@@ -90,7 +108,7 @@ Original = ->
 	stories.opacity = 1
 	storiesState = 1
 	subNavi.animate
-		y: 21
+		y: 21+ SpaceForiPhoneX
 
 storyContainer = []
 stories.parent = scroll.content
@@ -153,8 +171,7 @@ for layer,i in subContainer
 		for layer,i in subContainer
 			layer.color = '#333333'
 			this.color = '#FF8200'
-		indexNumber = this.index - 16
-# 			print this.x
+		indexNumber = this.index - 17
 		if indexNumber >= 0 and indexNumber <= 3
 			subScroll.animate
 				scrollX: 0
@@ -197,7 +214,7 @@ for i in [0...12]
 	subPopupActionContainer.push(layer)
 	if i >= 0 && i < 4
 		layer.x = 88 * i * ratio + 15
-		layer.y = 83
+		layer.y = 83+ SpaceForiPhoneX
 	if i >= 4 && i < 8
 		layer.x = 88 * i * ratio + 15 - 88 * 4 * ratio
 		layer.y = 128
@@ -205,7 +222,7 @@ for i in [0...12]
 		layer.x = 88 * i * ratio + 15 - 88 * 8 * ratio
 		layer.y = 173
 	TextLayer = subLayers[i].copy()
-	TextLayer.style
+	TextLayer.fontSize = 14
 	TextLayerContainer.push(TextLayer)
 	TextLayer.parent = layer
 	TextLayer.x = Align.center
@@ -218,8 +235,8 @@ for layer,i in TextLayerContainer
 		for layer,i in TextLayerContainer
 			layer.color = '#333333'
 			this.color = '#FF8200'
-		subIndexNumber = Math.floor((this.index - 49)/3 - 7)
-# 		print subIndexNumber
+		subIndexNumber = Math.floor((this.index - 49)/3 - 7) 
+		subIndexNumber -= 1
 		for layer,i in subContainer
 			layer.color = '#333333'
 			subContainer[subIndexNumber-1].color = '#FF8200'
@@ -243,10 +260,6 @@ for layer,i in TextLayerContainer
 				Utils.delay 0.3, ->
 					refresh()
 					overdrag()
-# subNavi.opacity = 0
-# scroll.onMove (event,layer) ->
-# 	subNavi.opacity = Utils.modulate(event.y, [-103,-104], [0,1], true)
-# 	subNavi.y = Utils.modulate(event.y, [-103,-113], [21,62], true)
 	
 LastPosition = 0
 yDelta = 0
@@ -266,14 +279,14 @@ scroll.on Events.Scroll, (event) ->
 			if yDelta > 3
 				subState = true
 				subNavi.animate
-					y: 21
+					y: 21 + SpaceForiPhoneX
 				Uper.animate
 					shadowColor: "#dadada"
 
 			if yDelta < -3
 				subState = false
 				subNavi.animate
-					y: 64
+					y: 64+ SpaceForiPhoneX
 				Uper.animate
 					shadowColor: "#e6e6e6"
 
@@ -282,22 +295,22 @@ scroll.on Events.Scroll, (event) ->
 				if yDelta > 3
 					subState = true
 					subNavi.animate
-						y: 21
-					Uper.animate
-						shadowColor: "#dadada"
+						y: 21+ SpaceForiPhoneX
+# 					Uper.animate
+# 						shadowColor: "#dadada"
 				if yDelta < -3
 					subState = false
 					subNavi.animate
-						y: 64
-					Uper.animate
-						shadowColor: "#e6e6e6"
+						y: 64+ SpaceForiPhoneX
+# 					Uper.animate
+# 						shadowColor: "#e6e6e6"
 	if scroll.scrollY <= 120
 		if storiesState == 1
-			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21,64], true)
+			subNavi.y = Utils.modulate(-scroll.scrollY, [-12,-53], [21+ SpaceForiPhoneX,64+ SpaceForiPhoneX], true)
 			subNavi.opacity = Utils.modulate(-scroll.scrollY, [-12,-20], [0,1], true)
 		else
 			subNavi.animate
-				y: 64
+				y: 64+ SpaceForiPhoneX
 			subNavi.opacity = 1
 	
 # scroll.onMove (event,layer) ->

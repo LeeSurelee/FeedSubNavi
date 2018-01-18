@@ -15,14 +15,17 @@ comments = ["北航故事", "北京小风子", "潘玮柏", "周冬雨","来去�
 TopNaviForX.opacity = 0
 BottomNaviForX.opacity = 0
 SpaceForiPhoneX = 0
+TimeForX.opacity = 0
 if Screen.height == 812
 	TopNaviForX.opacity = 1
 	BottomNaviForX.opacity = 1
 	SpaceForiPhoneX = 23
+	OriginalTime.opacity = 0
+	TimeForX.opacity = 1
 stories.y += SpaceForiPhoneX
 subNavi.y += SpaceForiPhoneX
-	
-
+Title.y += SpaceForiPhoneX
+Back.y -= SpaceForiPhoneX
 
 
 # UperImage.height = 57
@@ -212,13 +215,13 @@ for i in [0...12]
 	subPopupActionContainer.push(layer)
 	if i >= 0 && i < 4
 		layer.x = 88 * i * ratio + 15
-		layer.y = 83
+		layer.y = 83+ SpaceForiPhoneX
 	if i >= 4 && i < 8
 		layer.x = 88 * i * ratio + 15 - 88 * 4 * ratio
-		layer.y = 128
+		layer.y = 128+ SpaceForiPhoneX
 	if i >=8 && i < 12
 		layer.x = 88 * i * ratio + 15 - 88 * 8 * ratio
-		layer.y = 173
+		layer.y = 173+ SpaceForiPhoneX
 	TextLayer = subLayers[i].copy()
 	TextLayer.fontSize = 14
 	TextLayerContainer.push(TextLayer)
