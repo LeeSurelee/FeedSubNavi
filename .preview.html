@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<script type="text/javascript">
+		// This automatically sets the right viewport scale on mobile devices
+		(function () {
+			var scale = 1 / window.devicePixelRatio
+			var viewport = "width=device-width, height=device-height, initial-scale=" + scale + ", maximum-scale=" + scale + ", user-scalable=no, viewport-fit=cover"
+			var iOS = /iPad|iPhone|iPod/.test(navigator.platform)
+			if (iOS) { viewport += ", shrink-to-fit=no" }
+			document.write("<meta name=\"viewport\" content=\"" + viewport + "\">")
+		})()
+	</script>
+
+	<link rel="apple-touch-icon" href="framer/images/icon-120.png">
+	<link rel="apple-touch-icon" href="framer/images/icon-76.png" sizes="76x76">
+	<link rel="apple-touch-icon" href="framer/images/icon-120.png" sizes="120x120">
+	<link rel="apple-touch-icon" href="framer/images/icon-152.png" sizes="152x152">
+	<link rel="apple-touch-icon" href="framer/images/icon-180.png" sizes="180x180">
+	<link rel="apple-touch-icon" href="framer/images/icon-192.png" sizes="192x192">
+
+	<link rel="stylesheet" type="text/css" href="framer/style.css?nocache=6d40bc53861208d298f85019e08849ff">
+
+	<script src="framer/coffee-script.js"></script>
+	<script src="framer/framer.js?nocache=ed679a89f7693aa6fc00d4bcdd4ad4a4"></script>
+	<script src="framer/framer.generated.js?nocache=03e1611a6431c922ed0ead58ad1a0e3e"></script>
+	<script src="framer/framer.modules.js?nocache=7a44423848415f4061a948e5abd2aed9"></script>
+	<script src="framer/framer.vekter.js"></script>
+	<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 3;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
+  var LastPosition, Original, SpaceForiPhoneX, TextLayer, TextLayerContainer, comments, destroyhomePage, flow, homePageContent, homePageItem, i, indexNumber, j, k, l, layer, layerGap, len, len1, len2, m, medium, n, originalLayers, overdrag, overdragDistance, ratio, ref, refresh, scroll, storiesState, storyContainer, storyItemNumber, storyScroll, sub, subContainer, subContent, subIndexNumber, subItemNumber, subLayers, subPopupActionContainer, subScroll, subState, yDelta;
+
+  storyItemNumber = 8;
+
+  subItemNumber = 5;
+
+  layerGap = 10;
+
+  medium = 0;
+
+  sub = 0;
+
+  subContainer = [];
+
+  subLayers = [sub1, sub2, sub3, sub4, sub5, sub6, sub7, sub8, sub9, sub10, sub11, sub12, sub13];
+
+  originalLayers = [enter, enter2, enter3, enter4, enter5];
+
+  comments = ["北航故事", "北京小风子", "潘玮柏", "周冬雨", "来去之间", "用户昵称"];
+
+  TopNaviForX.opacity = 0;
+
+  BottomNaviForX.opacity = 0;
+
+  SpaceForiPhoneX = 0;
+
+  TimeForX.opacity = 0;
+
+  bottom.clip = true;
+
+  if (Screen.height === 812) {
+    TopNaviForX.opacity = 1;
+    BottomNaviForX.opacity = 1;
+    SpaceForiPhoneX = 23;
+    OriginalTime.opacity = 0;
+    TimeForX.opacity = 1;
+  }
+
+  stories.y += SpaceForiPhoneX;
+
+  subNavi.y += SpaceForiPhoneX;
+
+  Title.y += SpaceForiPhoneX;
+
+  Back.y -= SpaceForiPhoneX;
+
+  for (j = 0, len = originalLayers.length; j < len; j++) {
+    layer = originalLayers[j];
+    ratio = Screen.width / 375;
+    layer.width = Screen.width;
+    layer.height = ratio * 449;
+  }
+
+  Framer.Defaults.Animation = {
+    time: .3,
+    curve: Bezier.easeInOut
+  };
+
+  subNavi.clip = true;
+
+  flow = window.__framerNew("flow", "46:7-46:23", "#141bc181c",new FlowComponent);
+
+  flow.showNext($1);
+
+  scroll = window.__framerNew("scroll", "49:13-57:1", "#15d2b1f8c",new ScrollComponent({
+    scrollHorizontal: false,
+    width: Screen.width,
+    height: Screen.height,
+    backgroundColor: null,
+    parent: $1,
+    contentInset: {
+      bottom: 100
+    }
+  }));
+
+  scroll.sendToBack();
+
+  scroll.mouseWheelEnabled = true;
+
+  scroll.onScrollStart(function() {
+    return subScroll.speedX = 0;
+  });
+
+  scroll.onScrollEnd(function() {
+    return subScroll.speedX = 1;
+  });
+
+  destroyhomePage = function() {
+    var k, len1, results;
+    results = [];
+    for (k = 0, len1 = homePageItem.length; k < len1; k++) {
+      layer = homePageItem[k];
+      results.push(layer.destroy());
+    }
+    return results;
+  };
+
+  homePageItem = [];
+
+  homePageContent = function() {
+    var homeItemNumber, i, k, number, ref, results;
+    number = 3;
+    homeItemNumber = Math.ceil(number);
+    results = [];
+    for (i = k = 0, ref = homeItemNumber; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+      medium = i;
+      layer = window.__framerNew("layer", "79:10-79:50", "?",Utils.randomChoice(originalLayers).copy());
+      layer.x = Align.center;
+      layer.parent = scroll.content;
+      if (i < 1) {
+        layer.y = 166 + SpaceForiPhoneX;
+      } else {
+        layer.y = homePageItem[medium - 1].y + homePageItem[medium - 1].height + layerGap;
+      }
+      results.push(homePageItem.push(layer));
+    }
+    return results;
+  };
+
+  homePageContent();
+
+  storiesState = 1;
+
+  refresh = function() {
+    destroyhomePage();
+    homePageContent();
+    window.__framerAnimation("#1234fe5da",scroll.animate({
+      scrollY: 103,
+      y: 42,
+      options: {
+        time: 0.01
+      }
+    }));
+    stories.opacity = 0;
+    return storiesState = 0;
+  };
+
+  Original = function() {
+    homePageContent();
+    window.__framerAnimation("#13e7ca49c",scroll.animate({
+      scrollY: 0,
+      y: 0
+    }));
+    stories.opacity = 1;
+    storiesState = 1;
+    return window.__framerAnimation("#9ddea936",subNavi.animate({
+      y: 21 + SpaceForiPhoneX
+    }));
+  };
+
+  storyContainer = [];
+
+  stories.parent = scroll.content;
+
+  storyScroll = window.__framerNew("storyScroll", "117:18-122:15", "#16b191e07",new ScrollComponent({
+    scrollVertical: false,
+    width: Screen.width,
+    height: 100,
+    backgroundColor: null,
+    parent: stories
+  }));
+
+  storyScroll.mouseWheelEnabled = true;
+
+  storyScroll.draggable.enabled = false;
+
+  storyScroll.draggable.propagateEvents = false;
+
+  for (i = k = 0, ref = storyItemNumber; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
+    layer = window.__framerNew("layer", "128:9-128:20", "@Layer",story.copy());
+    layer.parent = storyScroll.content;
+    layer.x = (55 + 11) * i + layerGap;
+    layer.y = 16;
+    avatarBG.borderWidth = 2;
+    avatarBG.borderColor = "#FF8200";
+    Text_1.text = Utils.randomChoice(comments);
+    avatar.image = Utils.randomImage();
+    storyContainer.push(layer);
+  }
+
+  story.parent = storyScroll.content;
+
+  Text_1.text = '我的故事';
+
+  avatarBG.borderWidth = 0;
+
+  storyContainer[0].opacity = 0;
+
+  subScroll = window.__framerNew("subScroll", "142:16-148:10", "#120645bad",new ScrollComponent({
+    scrollVertical: false,
+    width: Screen.width,
+    backgroundColor: null,
+    parent: subNavi,
+    contentInset: {
+      right: 50
+    }
+  }));
+
+  subScroll.mouseWheelEnabled = true;
+
+  subScroll.draggable.enabled = false;
+
+  subScroll.draggable.propagateEvents = false;
+
+  subScroll.sendToBack();
+
+  subContent = function() {
+    var l, results;
+    results = [];
+    for (i = l = 0; l <= 12; i = ++l) {
+      sub = i;
+      layer = subLayers[i];
+      layer.parent = subScroll.content;
+      layer.y = 12;
+      if (i < 1) {
+        layer.x = 14;
+      } else {
+        layer.x = subContainer[sub - 1].x + subContainer[sub - 1].width + 23;
+      }
+      results.push(subContainer.push(layer));
+    }
+    return results;
+  };
+
+  subContent();
+
+  subContainer[0].color = "#FF8200";
+
+  indexNumber = 0;
+
+  for (i = l = 0, len1 = subContainer.length; l < len1; i = ++l) {
+    layer = subContainer[i];
+    layer.onClick(function() {
+      var len2, len3, m, n;
+      for (i = m = 0, len2 = subContainer.length; m < len2; i = ++m) {
+        layer = subContainer[i];
+        layer.color = '#333333';
+        this.color = '#FF8200';
+      }
+      indexNumber = this.index - 17;
+      if (indexNumber >= 0 && indexNumber <= 3) {
+        window.__framerAnimation("#14aa748f8",subScroll.animate({
+          scrollX: 0
+        }));
+      }
+      if (indexNumber > 3 && indexNumber < 10) {
+        window.__framerAnimation("#1403cd710",subScroll.animate({
+          scrollX: subContainer[indexNumber].x - 200 - subContainer[indexNumber].width
+        }));
+      }
+      if (indexNumber < 13 && indexNumber >= 10) {
+        window.__framerAnimation("#deef88d3",subScroll.animate({
+          scrollX: subContainer[12].x
+        }));
+      }
+      for (n = 0, len3 = TextLayerContainer.length; n < len3; n++) {
+        layer = TextLayerContainer[n];
+        layer.color = '#333333';
+        TextLayerContainer[indexNumber - 1].color = '#FF8200';
+      }
+      refresh();
+      overdrag();
+      if (indexNumber === 1) {
+        return Original();
+      }
+    });
+  }
+
+  subMore.draggable.propagateEvents = false;
+
+  subMore.onClick(function() {
+    return flow.showOverlayTop($2);
+  });
+
+  Back.onClick(function() {
+    return flow.showPrevious();
+  });
+
+  $2.onClick(function() {
+    return flow.showPrevious();
+  });
+
+  $2.propagateEvents = true;
+
+  TextLayerContainer = [];
+
+  subPopupActionContainer = [];
+
+  for (i = m = 0; m < 12; i = ++m) {
+    layer = window.__framerNew("layer", "212:9-212:23", "@Layer",subPopup.copy());
+    layer.width = subPopup.width * ratio;
+    Layer.height = subPopup.height * ratio;
+    layer.parent = $2;
+    subPopupActionContainer.push(layer);
+    if (i >= 0 && i < 4) {
+      layer.x = 88 * i * ratio + 15;
+      layer.y = 83 + SpaceForiPhoneX;
+    }
+    if (i >= 4 && i < 8) {
+      layer.x = 88 * i * ratio + 15 - 88 * 4 * ratio;
+      layer.y = 128 + SpaceForiPhoneX;
+    }
+    if (i >= 8 && i < 12) {
+      layer.x = 88 * i * ratio + 15 - 88 * 8 * ratio;
+      layer.y = 173 + SpaceForiPhoneX;
+    }
+    TextLayer = window.__framerNew("TextLayer", "226:13-226:31", "@Layer",subLayers[i].copy());
+    TextLayer.fontSize = 14;
+    TextLayerContainer.push(TextLayer);
+    TextLayer.parent = layer;
+    TextLayer.x = Align.center;
+    TextLayer.y = Align.center;
+  }
+
+  subIndexNumber = 0;
+
+  for (i = n = 0, len2 = TextLayerContainer.length; n < len2; i = ++n) {
+    layer = TextLayerContainer[i];
+    layer.onClick(function() {
+      var len3, len4, o, p;
+      for (i = o = 0, len3 = TextLayerContainer.length; o < len3; i = ++o) {
+        layer = TextLayerContainer[i];
+        layer.color = '#333333';
+        this.color = '#FF8200';
+      }
+      subIndexNumber = Math.floor((this.index - 49) / 3 - 7);
+      subIndexNumber -= 1;
+      for (i = p = 0, len4 = subContainer.length; p < len4; i = ++p) {
+        layer = subContainer[i];
+        layer.color = '#333333';
+        subContainer[subIndexNumber - 1].color = '#FF8200';
+      }
+      Utils.delay(0.1, function() {
+        return flow.showPrevious($1);
+      });
+      return Utils.delay(0.1, function() {
+        if (subIndexNumber >= 0 && subIndexNumber <= 3) {
+          window.__framerAnimation("#dc3c841e",subScroll.animate({
+            scrollX: 0
+          }));
+        }
+        if (subIndexNumber > 3 && subIndexNumber < 10) {
+          window.__framerAnimation("#d1d21236",subScroll.animate({
+            scrollX: subContainer[subIndexNumber].x - 200 - subContainer[subIndexNumber].width
+          }));
+        }
+        if (subIndexNumber < 13 && subIndexNumber >= 10) {
+          window.__framerAnimation("#17084c3f9",subScroll.animate({
+            scrollX: subContainer[12].x
+          }));
+        }
+        if (subIndexNumber === 1) {
+          return Utils.delay(0.1, function() {
+            refresh();
+            return Original();
+          });
+        } else {
+          return Utils.delay(0.3, function() {
+            refresh();
+            return overdrag();
+          });
+        }
+      });
+    });
+  }
+
+  LastPosition = 0;
+
+  yDelta = 0;
+
+  scroll.on(Events.ScrollStart, function(event) {
+    return LastPosition = scroll.scrollY;
+  });
+
+  subState = 0;
+
+  scroll.on(Events.Scroll, function(event) {
+    yDelta = LastPosition - scroll.scrollY;
+    LastPosition = scroll.scrollY;
+    if (scroll.scrollY > 120) {
+      if (storiesState === 1) {
+        if (yDelta > 3) {
+          subState = true;
+          window.__framerAnimation("#13e5bd414",subNavi.animate({
+            y: 21 + SpaceForiPhoneX
+          }));
+          window.__framerAnimation("#a8284a96",Uper.animate({
+            shadowColor: "#dadada"
+          }));
+        }
+        if (yDelta < -3) {
+          subState = false;
+          window.__framerAnimation("#1078a4f30",subNavi.animate({
+            y: 64 + SpaceForiPhoneX
+          }));
+          window.__framerAnimation("#17156c5b2",Uper.animate({
+            shadowColor: "#e6e6e6"
+          }));
+        }
+      } else {
+        if (scroll.scrollY > 180) {
+          if (yDelta > 3) {
+            subState = true;
+            window.__framerAnimation("#e3b07bfa",subNavi.animate({
+              y: 21 + SpaceForiPhoneX
+            }));
+          }
+          if (yDelta < -3) {
+            subState = false;
+            window.__framerAnimation("#fd716a20",subNavi.animate({
+              y: 64 + SpaceForiPhoneX
+            }));
+          }
+        }
+      }
+    }
+    if (scroll.scrollY <= 120) {
+      if (storiesState === 1) {
+        subNavi.y = Utils.modulate(-scroll.scrollY, [-12, -53], [21 + SpaceForiPhoneX, 64 + SpaceForiPhoneX], true);
+        return subNavi.opacity = Utils.modulate(-scroll.scrollY, [-12, -20], [0, 1], true);
+      } else {
+        window.__framerAnimation("#130502cbc",subNavi.animate({
+          y: 64 + SpaceForiPhoneX
+        }));
+        return subNavi.opacity = 1;
+      }
+    }
+  });
+
+  overdragDistance = 0;
+
+  overdrag = function() {
+    return scroll.onMove(function(event, layer) {
+      overdragDistance = event.y;
+      if (overdragDistance > -103) {
+        scroll.speedY = Utils.modulate(event.y, [-104, 103], [1, 0], true);
+        return scroll.onScrollEnd(function() {
+          if (overdragDistance > -103) {
+            return window.__framerAnimation("#12c95c878",scroll.animate({
+              scrollY: 103
+            }));
+          }
+        });
+      } else {
+        return scroll.speedY = 1;
+      }
+    });
+  };
+
+}).call(this);
+})</script>
+
+</head>
+
+<body>
+</body>
+
+</html>
