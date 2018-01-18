@@ -16,6 +16,7 @@ TopNaviForX.opacity = 0
 BottomNaviForX.opacity = 0
 SpaceForiPhoneX = 0
 TimeForX.opacity = 0
+bottom.clip = true
 if Screen.height == 812
 	TopNaviForX.opacity = 1
 	BottomNaviForX.opacity = 1
@@ -26,6 +27,7 @@ stories.y += SpaceForiPhoneX
 subNavi.y += SpaceForiPhoneX
 Title.y += SpaceForiPhoneX
 Back.y -= SpaceForiPhoneX
+
 
 
 # UperImage.height = 57

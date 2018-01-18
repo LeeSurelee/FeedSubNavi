@@ -30,10 +30,10 @@
 
 	<script src="framer/coffee-script.js"></script>
 	<script src="framer/framer.js?nocache=ed679a89f7693aa6fc00d4bcdd4ad4a4"></script>
-	<script src="framer/framer.generated.js?nocache=03e1611a6431c922ed0ead58ad1a0e3e"></script>
+	<script src="framer/framer.generated.js?nocache=bb03e9e35f98e113163018efbed4499c"></script>
 	<script src="framer/framer.modules.js?nocache=7a44423848415f4061a948e5abd2aed9"></script>
 	<script src="framer/framer.vekter.js"></script>
-	<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 100;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
+	<script>document.addEventListener("DOMContentLoaded", function() {window.__framerClientCodeId = 27;window.__framerNew = function (n,loc,th,i){if (i == null) { return i };i.__framerInstanceInfo = _.defaults({name:n,location:loc,hash:th},i.__framerInstanceInfo);_.defaults(i.__framerInstanceInfo,{name:"Untitled"});return i;};window.__framerAnimation = function (th,a){if (a.isNoop === true) {return a;};var l = a.layer;if (l == null) { return a; };if (l.__framerAnimationInfo == null) {l.__framerAnimationInfo = {};};l.__framerAnimationInfo[th] = {originalState:a._originalState, destinationProperties: a.properties, destinationOptions: a.options};return a;};(function() {
   var LastPosition, Original, SpaceForiPhoneX, TextLayer, TextLayerContainer, comments, destroyhomePage, flow, homePageContent, homePageItem, i, indexNumber, j, k, l, layer, layerGap, len, len1, len2, m, medium, n, originalLayers, overdrag, overdragDistance, ratio, ref, refresh, scroll, storiesState, storyContainer, storyItemNumber, storyScroll, sub, subContainer, subContent, subIndexNumber, subItemNumber, subLayers, subPopupActionContainer, subScroll, subState, yDelta;
 
   storyItemNumber = 8;
@@ -61,6 +61,8 @@
   SpaceForiPhoneX = 0;
 
   TimeForX.opacity = 0;
+
+  bottom.clip = true;
 
   if (Screen.height === 812) {
     TopNaviForX.opacity = 1;
@@ -92,11 +94,11 @@
 
   subNavi.clip = true;
 
-  flow = window.__framerNew("flow", "44:7-44:23", "#171f9be5e",new FlowComponent);
+  flow = window.__framerNew("flow", "46:7-46:23", "#141bc181c",new FlowComponent);
 
   flow.showNext($1);
 
-  scroll = window.__framerNew("scroll", "47:13-55:1", "#8d68c5ce",new ScrollComponent({
+  scroll = window.__framerNew("scroll", "49:13-57:1", "#15d2b1f8c",new ScrollComponent({
     scrollHorizontal: false,
     width: Screen.width,
     height: Screen.height,
@@ -138,7 +140,7 @@
     results = [];
     for (i = k = 0, ref = homeItemNumber; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
       medium = i;
-      layer = window.__framerNew("layer", "77:10-77:50", "?",Utils.randomChoice(originalLayers).copy());
+      layer = window.__framerNew("layer", "79:10-79:50", "?",Utils.randomChoice(originalLayers).copy());
       layer.x = Align.center;
       layer.parent = scroll.content;
       if (i < 1) {
@@ -158,7 +160,7 @@
   refresh = function() {
     destroyhomePage();
     homePageContent();
-    window.__framerAnimation("#b9836f58",scroll.animate({
+    window.__framerAnimation("#1234fe5da",scroll.animate({
       scrollY: 103,
       y: 42,
       options: {
@@ -171,13 +173,13 @@
 
   Original = function() {
     homePageContent();
-    window.__framerAnimation("#d4b02e1a",scroll.animate({
+    window.__framerAnimation("#13e7ca49c",scroll.animate({
       scrollY: 0,
       y: 0
     }));
     stories.opacity = 1;
     storiesState = 1;
-    return window.__framerAnimation("#1341232b4",subNavi.animate({
+    return window.__framerAnimation("#9ddea936",subNavi.animate({
       y: 21 + SpaceForiPhoneX
     }));
   };
@@ -186,7 +188,7 @@
 
   stories.parent = scroll.content;
 
-  storyScroll = window.__framerNew("storyScroll", "115:18-120:15", "#9b56c449",new ScrollComponent({
+  storyScroll = window.__framerNew("storyScroll", "117:18-122:15", "#16b191e07",new ScrollComponent({
     scrollVertical: false,
     width: Screen.width,
     height: 100,
@@ -201,7 +203,7 @@
   storyScroll.draggable.propagateEvents = false;
 
   for (i = k = 0, ref = storyItemNumber; 0 <= ref ? k < ref : k > ref; i = 0 <= ref ? ++k : --k) {
-    layer = window.__framerNew("layer", "126:9-126:20", "@Layer",story.copy());
+    layer = window.__framerNew("layer", "128:9-128:20", "@Layer",story.copy());
     layer.parent = storyScroll.content;
     layer.x = (55 + 11) * i + layerGap;
     layer.y = 16;
@@ -220,7 +222,7 @@
 
   storyContainer[0].opacity = 0;
 
-  subScroll = window.__framerNew("subScroll", "140:16-146:10", "#150a201ef",new ScrollComponent({
+  subScroll = window.__framerNew("subScroll", "142:16-148:10", "#120645bad",new ScrollComponent({
     scrollVertical: false,
     width: Screen.width,
     backgroundColor: null,
@@ -273,17 +275,17 @@
       }
       indexNumber = this.index - 17;
       if (indexNumber >= 0 && indexNumber <= 3) {
-        window.__framerAnimation("#e0dad276",subScroll.animate({
+        window.__framerAnimation("#14aa748f8",subScroll.animate({
           scrollX: 0
         }));
       }
       if (indexNumber > 3 && indexNumber < 10) {
-        window.__framerAnimation("#17f8d8439",subScroll.animate({
+        window.__framerAnimation("#1403cd710",subScroll.animate({
           scrollX: subContainer[indexNumber].x - 200 - subContainer[indexNumber].width
         }));
       }
       if (indexNumber < 13 && indexNumber >= 10) {
-        window.__framerAnimation("#175231251",subScroll.animate({
+        window.__framerAnimation("#deef88d3",subScroll.animate({
           scrollX: subContainer[12].x
         }));
       }
@@ -321,7 +323,7 @@
   subPopupActionContainer = [];
 
   for (i = m = 0; m < 12; i = ++m) {
-    layer = window.__framerNew("layer", "210:9-210:23", "@Layer",subPopup.copy());
+    layer = window.__framerNew("layer", "212:9-212:23", "@Layer",subPopup.copy());
     layer.width = subPopup.width * ratio;
     Layer.height = subPopup.height * ratio;
     layer.parent = $2;
@@ -338,7 +340,7 @@
       layer.x = 88 * i * ratio + 15 - 88 * 8 * ratio;
       layer.y = 173 + SpaceForiPhoneX;
     }
-    TextLayer = window.__framerNew("TextLayer", "224:13-224:31", "@Layer",subLayers[i].copy());
+    TextLayer = window.__framerNew("TextLayer", "226:13-226:31", "@Layer",subLayers[i].copy());
     TextLayer.fontSize = 14;
     TextLayerContainer.push(TextLayer);
     TextLayer.parent = layer;
@@ -369,17 +371,17 @@
       });
       return Utils.delay(0.1, function() {
         if (subIndexNumber >= 0 && subIndexNumber <= 3) {
-          window.__framerAnimation("#172700d9c",subScroll.animate({
+          window.__framerAnimation("#dc3c841e",subScroll.animate({
             scrollX: 0
           }));
         }
         if (subIndexNumber > 3 && subIndexNumber < 10) {
-          window.__framerAnimation("#168059bb4",subScroll.animate({
+          window.__framerAnimation("#d1d21236",subScroll.animate({
             scrollX: subContainer[subIndexNumber].x - 200 - subContainer[subIndexNumber].width
           }));
         }
         if (subIndexNumber < 13 && subIndexNumber >= 10) {
-          window.__framerAnimation("#106b84d77",subScroll.animate({
+          window.__framerAnimation("#17084c3f9",subScroll.animate({
             scrollX: subContainer[12].x
           }));
         }
@@ -415,19 +417,19 @@
       if (storiesState === 1) {
         if (yDelta > 3) {
           subState = true;
-          window.__framerAnimation("#d48f5d92",subNavi.animate({
+          window.__framerAnimation("#13e5bd414",subNavi.animate({
             y: 21 + SpaceForiPhoneX
           }));
-          window.__framerAnimation("#13e5bd414",Uper.animate({
+          window.__framerAnimation("#a8284a96",Uper.animate({
             shadowColor: "#dadada"
           }));
         }
         if (yDelta < -3) {
           subState = false;
-          window.__framerAnimation("#146dafc59",subNavi.animate({
+          window.__framerAnimation("#1078a4f30",subNavi.animate({
             y: 64 + SpaceForiPhoneX
           }));
-          window.__framerAnimation("#1078a4f30",Uper.animate({
+          window.__framerAnimation("#17156c5b2",Uper.animate({
             shadowColor: "#e6e6e6"
           }));
         }
@@ -435,13 +437,13 @@
         if (scroll.scrollY > 180) {
           if (yDelta > 3) {
             subState = true;
-            window.__framerAnimation("#179e40578",subNavi.animate({
+            window.__framerAnimation("#e3b07bfa",subNavi.animate({
               y: 21 + SpaceForiPhoneX
             }));
           }
           if (yDelta < -3) {
             subState = false;
-            window.__framerAnimation("#93a4f39e",subNavi.animate({
+            window.__framerAnimation("#fd716a20",subNavi.animate({
               y: 64 + SpaceForiPhoneX
             }));
           }
@@ -453,7 +455,7 @@
         subNavi.y = Utils.modulate(-scroll.scrollY, [-12, -53], [21 + SpaceForiPhoneX, 64 + SpaceForiPhoneX], true);
         return subNavi.opacity = Utils.modulate(-scroll.scrollY, [-12, -20], [0, 1], true);
       } else {
-        window.__framerAnimation("#c683b63a",subNavi.animate({
+        window.__framerAnimation("#130502cbc",subNavi.animate({
           y: 64 + SpaceForiPhoneX
         }));
         return subNavi.opacity = 1;
@@ -470,7 +472,7 @@
         scroll.speedY = Utils.modulate(event.y, [-104, 103], [1, 0], true);
         return scroll.onScrollEnd(function() {
           if (overdragDistance > -103) {
-            return window.__framerAnimation("#16be675a1",scroll.animate({
+            return window.__framerAnimation("#12c95c878",scroll.animate({
               scrollY: 103
             }));
           }
